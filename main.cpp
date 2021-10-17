@@ -50,7 +50,7 @@ int main()
     num::plots::display<real>({
         num::plots::make_scatter(delta_calculate_seq, sf::Color::Blue),
         num::plots::make_plot(delta_estimate_seq, sf::Color::Yellow)
-    }, h_min, h_max, e_min, e_max, { .width = 1600, .height = 1600, .resolution = 10, .title = "Numeric Differentiation" });
+    }, h_min, h_max, e_min, e_max, { .width = 1600, .height = 1600, .resolution = 20, .title = "Numeric Differentiation" });
 
     return 0;
 }

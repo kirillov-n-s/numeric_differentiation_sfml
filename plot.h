@@ -21,7 +21,7 @@ namespace num::plots
     {
         uint32_t    width      = 800,
                     height     = 800,
-                    resolution = 5;
+                    resolution = 10;
         std::string title      = "";
         sf::Color   fg_color   = sf::Color::White,
                     bg_color   = sf::Color::Black;
@@ -59,10 +59,10 @@ namespace num::plots
         const auto& [width, height, resolution, title, fg_color, bg_color] = kwargs;
 
         float feature_scale = (float)width / (float)(display_kwargs{}.width),
-              width_eff     = width  * 0.95f,
+              width_eff     = width  * 0.975f,
               height_eff    = height * 0.975f,
               offset_x      = width  * 0.1f,
-              offset_y      = height * 0.05f,
+              offset_y      = height * 0.1f,
               scale_x       = (width  - offset_x) / (to_x - from_x),
               scale_y       = (height - offset_y) / (to_y - from_y);
 
@@ -108,11 +108,15 @@ namespace num::plots
         for (std::size_t i = 0; i <= resolution; i++)
         {
             labels_x[i] = sf::Text(std::to_string(from_x + i * h_x), font, fontsize);
-            labels_x[i].setPosition(x + i * step_x - labels_x[i].getLocalBounds().width / 2, y + 3 * seg);
+            //labels_x[i].setPosition(x + i * step_x - labels_x[i].getLocalBounds().width / 2, y + 3 * seg);
+            const auto& bounds_x = labels_x[i].getLocalBounds();
+            labels_x[i].setPosition(x + i * step_x + bounds_x.height, y + 3 * seg);
+            labels_x[i].setRotation(90);
             labels_x[i].setFillColor(fg_color);
+
             labels_y[i] = sf::Text(std::to_string(from_y + i * h_y), font, fontsize);
-            const auto& bounds = labels_y[i].getLocalBounds();
-            labels_y[i].setPosition(x - 3 * seg - bounds.width, y - i * step_y - bounds.height);
+            const auto& bounds_y = labels_y[i].getLocalBounds();
+            labels_y[i].setPosition(x - 3 * seg - bounds_y.width, y - i * step_y - bounds_y.height);
             labels_y[i].setFillColor(fg_color);
         }
 
