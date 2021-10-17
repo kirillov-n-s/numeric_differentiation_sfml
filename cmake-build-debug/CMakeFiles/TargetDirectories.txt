@@ -1,0 +1,3 @@
+C:/Users/user/Desktop/University/!Works/Numeric/laba2/laba2/cmake-build-debug/CMakeFiles/laba2.dir
+C:/Users/user/Desktop/University/!Works/Numeric/laba2/laba2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/user/Desktop/University/!Works/Numeric/laba2/laba2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

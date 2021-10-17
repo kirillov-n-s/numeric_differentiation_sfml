@@ -1,0 +1,5 @@
+C:\Users\user\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\212.5457.51\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - NMake Makefiles" C:\Users\user\Desktop\University\!Works\Numeric\laba2\laba2
+-- Found SFML 2.5.1 in F:/Programming/SFML-2.5.1-windows-vc15-64-bit/SFML-2.5.1/lib/cmake/SFML
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/user/Desktop/University/!Works/Numeric/laba2/laba2/cmake-build-debug
