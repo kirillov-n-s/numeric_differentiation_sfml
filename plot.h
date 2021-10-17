@@ -74,9 +74,12 @@ namespace num::plots
             auto k = seq.size();
             bufs[i] = sf::VertexArray(type, k);
             for (std::size_t j = 0; j < k; j++)
-                bufs[i][j] = sf::Vertex(sf::Vector2f(offset_x + seq[j].first * scale_x,
-                                                     height - (offset_y + seq[j].second * scale_y)),
-                                        color);
+            {
+                const auto& [x, y] = seq[j];
+                bufs[i][j] = sf::Vertex(sf::Vector2f(offset_x + (x - from_x) * scale_x,
+                                                     height - (offset_y + (y - from_y) * scale_y)),
+                                        (x >= from_x && y >= from_y) ? color : sf::Color::Transparent);
+            }
         }
 
         float x = offset_x, y = height - offset_y;

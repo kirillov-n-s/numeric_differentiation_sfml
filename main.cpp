@@ -42,7 +42,7 @@ int main()
         return res;
     };
 
-    real h_min = 0, h_max = 0.125,
+    real h_min = 0, h_max = 0.2,
          e_min = 0, e_max = delta_estimate(h_max);
     auto delta_estimate_seq  = num::make_seq<real>(delta_estimate,  h_min, h_max, 1000),
          delta_calculate_seq = num::make_seq<real>(delta_calculate, h_min, h_max, 100000);
